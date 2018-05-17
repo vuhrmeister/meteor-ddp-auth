@@ -5,12 +5,12 @@ import Client from './Client'
 let providerInstance = null
 
 const DDPAuth = {
-  startProvider (additionalSelectCriteria) {
+  startProvider () {
     if (providerInstance) {
       throw new Meteor.Error('DDPAuth provider can be started only once!')
     }
 
-    providerInstance = new Provider(additionalSelectCriteria)
+    providerInstance = new Provider()
     providerInstance.start()
   },
 
